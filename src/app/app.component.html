@@ -1,0 +1,43 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Ticketera</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="chat" class="nav-link"></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="listadoFireStore" class="nav-link"></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="listadoRealtime" class="nav-link"></a>
+      </li>
+    </div>
+  </nav>
+  <h1> Consultas Ticketera</h1>
+  <div class="container mt-3">
+    <h2>{{ title }}</h2>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('todos los tickets' , '')"> todo los tickets</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('quien atiende mas tickets' , 'quien-atiende-mas-tickets')"> quien atiende mas tickets</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('quien genera mas tickets' , 'quien-genera-mas-tickets')"> quien genera mas tickets</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('que desperfecto ocurre' , 'que-desperfecto-ocurre')"> que desperfecto ocurre</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('tickets sin resolver' , 'tickets-sin-resolver')"> tickets sin resolver</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('cada cuanto ocurre desperfecto' , 'cada-cuanto-ocurre-desperfecto')"> cada cuanto ocurre desperfecto</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('desperfectos por zona avellaneda' , 'desperfectos-por-zona-avellaneda')"> desperfectos por zona avellaneda</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('desperfectos por zona flores' , 'desperfectos-por-zona-flores')"> desperfectos por zona flores</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('clientes cercanos a sucursal Flores' , 'clientes-cercanos-zona-flores')"> clientes cercanos a sucursal Flores</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('clientes cercanos a sucursal Avellaneda' , 'clientes-cercanos-zona-avellaneda')"> clientes cercanos a sucursal Avellaneda</button>
+    <button mat-raised-button color="accent" (click)="callApiTicketera('cliente que es ademas empleado' , 'clientes-empleados')"> cliente que es ademas empleado</button>
+  </div>
+
+  <div class="container mt-3">
+    <h2>{{ titulo }}</h2>
+
+    <ul class="list-group">
+      <li *ngFor= "let ticket of tickets">
+        {{ticket | json}}
+    </ul>
+
+    
+  </div>
+
+</div>
